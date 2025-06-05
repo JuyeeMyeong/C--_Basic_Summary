@@ -20,3 +20,37 @@ void BookManager::displayAllBooks() const {
         cout << "- " << books[i].title << " by " << books[i].author << endl;
     }
 }
+
+// 제목으로 책 찾기 메서드 
+Book* BookManager::findBookByTitle (const string& title)
+{
+    for(Book& book : books)
+    {
+        if (book.title == title)
+        {
+            return &book;
+        }
+    }
+}
+
+Book* BookManager::getBookByTitle (const string& title)
+{
+    return findBookByTitle(title);
+}
+
+// 작가로 책 찾기 메서드 
+Book* BookManager::getBookByAuthor (const string& author)
+{
+    for(Book& book : books)
+    {
+        if (book.author == author)
+        {
+            return &book;
+        }
+    }
+}
+
+Book* BookManager::getBookByAuthor (const string& author)
+{
+    return findBookByAuthor(author);
+}
