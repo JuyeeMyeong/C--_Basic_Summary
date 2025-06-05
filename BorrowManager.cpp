@@ -45,10 +45,13 @@ void BorrowManager::returnBook (const string& title)
 
 void BorrowManager::displayStock() const
 {
+    cout << "책 재고 목록: ";
     for(const auto& pair : stock)
     {
+        const string& title = pair.first;
         const int& quantity = pair.second;
 
-        cout << "Stock: " << quantity << endl; // Book Manager에서 책 제목과 저자를 반환하기 때문에 수량만 반환 
+        cout << "Book Title: " << title << endl;
+        cout << "Stock: " << quantity << endl;
     }
 }
