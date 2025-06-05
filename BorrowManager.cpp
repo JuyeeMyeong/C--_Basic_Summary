@@ -16,7 +16,7 @@ void BorrowManager::initializeStock (const Book& book, int quantity)
 
 void BorrowManager::borrowBook (const string& title)
 {
-    if (stock.count(title)) // 없는 책일 때 
+    if (!stock.count(title)) // 없는 책일 때 
     {
         cout << "There's no such book named " << title << endl;
         return;

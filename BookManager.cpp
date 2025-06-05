@@ -31,6 +31,7 @@ Book* BookManager::findBookByTitle (const string& title)
             return &book;
         }
     }
+    return nullptr;
 }
 
 Book* BookManager::getBookByTitle (const string& title)
@@ -39,7 +40,7 @@ Book* BookManager::getBookByTitle (const string& title)
 }
 
 // 작가로 책 찾기 메서드 
-Book* BookManager::getBookByAuthor (const string& author)
+Book* BookManager::findBookByAuthor (const string& author)
 {
     for(Book& book : books)
     {
@@ -48,6 +49,7 @@ Book* BookManager::getBookByAuthor (const string& author)
             return &book;
         }
     }
+    return nullptr;
 }
 
 Book* BookManager::getBookByAuthor (const string& author)
