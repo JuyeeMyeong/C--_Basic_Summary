@@ -49,7 +49,7 @@ void BorrowManager::returnBook (const string& title)
 
 void BorrowManager::displayStock() const
 {
-    cout << "책 재고 목록: ";
+    cout << "책 재고 목록: " << endl;
     for(const auto& pair : stock)
     {
         const string& title = pair.first;
