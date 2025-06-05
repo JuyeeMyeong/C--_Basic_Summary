@@ -16,7 +16,13 @@ void BorrowManager::initializeStock (const Book& book, int quantity)
 
 void BorrowManager::borrowBook (const string& title)
 {
-    if(stock.count(title) && stock[title] > 0) // 재고가 있고 빌려줄 수량이 있을 때때
+    if (stock.count(title)) // 없는 책일 때 
+    {
+        cout << "There's no such book named " << title << endl;
+        return;
+    }
+
+    if(stock[title] > 0) // 재고가 있고 빌려줄 수량이 있을 때 
     {
         --stock[title];
     } else
@@ -41,10 +47,8 @@ void BorrowManager::displayStock() const
 {
     for(const auto& pair : stock)
     {
-        const string& title = pair.first;
         const int& quantity = pair.second;
 
-        cout << "Book title: " << title << endl;
-        cout << "Quantity: " << quantity << endl;
+        cout << "Stock: " << quantity << endl; // Book Manager에서 책 제목과 저자를 반환하기 때문에 수량만 반환 
     }
 }
