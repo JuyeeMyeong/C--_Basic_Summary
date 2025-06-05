@@ -25,6 +25,8 @@ void BorrowManager::borrowBook (const string& title)
     if(stock[title] > 0) // 재고가 있고 빌려줄 수량이 있을 때 
     {
         --stock[title];
+        cout << "You borrowed " << title << endl;
+        cout << "Stock left: " << stock[title] << endl;
     } else
     {
         cout << "There's no stock left for " << title << endl;
@@ -36,6 +38,8 @@ void BorrowManager::returnBook (const string& title)
     if (stock.count(title)) // 재고에 있는 책이면 반납을 받음음
     {
         ++stock[title];
+        cout << "You returned " << title << endl;
+        cout << "Stock left: " << stock[title] << endl;
     } else
     {
         cout << "There's no such book named " << title << endl;
